@@ -1,0 +1,105 @@
+@import 'colors';
+@import 'media-queries';
+
+%align-center {
+    display: flex;
+    align-items: center;
+}
+
+.navbar {
+    height: 6rem;
+    z-index: 5;
+    display: flex;
+    padding: 2.5rem calc((100vw - 1200px) / 2);
+    margin: 1.5rem 0;
+    position: relative;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    @include mobile {
+        margin: 0;
+    }
+
+    &-logo {
+        @extend %align-center;
+        cursor: pointer;
+        height: 2rem;
+        position: absolute;
+        left: 10rem;
+        @include mobile {
+            left: 1.5rem;
+        }
+
+    }
+    &-bar {
+        opacity: 0;
+
+        @include mobile {
+            color: $grayishViolet;
+            opacity: 1;
+            position: absolute;
+            top: 2.5rem;
+            right: 2rem;
+            font-size: 2rem;
+        }
+    }
+    &-menu-a {
+        @extend %align-center;
+        list-style: none;
+        text-align: center;
+        margin: 1rem 10rem 0 0;
+        position: absolute;
+        top: 1.8rem;
+        left: 20rem;
+
+        @include mobile {
+            display: none;
+        }
+
+        &-link {
+            color: $gray;
+            @extend %align-center;
+            justify-content: center;
+            text-decoration: none;
+            padding: 0 1rem;
+            &:hover {
+                color: $veryDarkViolet;
+            }
+        }
+    }
+    &-menu-b {
+        @extend %align-center;
+        list-style: none;
+        text-align: center;
+        position: absolute;
+        top: 1.8rem;
+        right: 5rem;
+
+        @include mobile {
+            display: none;
+        }
+
+        &-link {
+            color: $gray;
+            @extend %align-center;
+            justify-content: center;
+            text-decoration: none;
+            padding: 0 1rem;
+            margin-right: 2rem;
+            &:hover {
+                color: $veryDarkViolet;
+            }
+        }
+        &-button {
+            color: #fff;
+            background-color: $cyan;
+            @extend %align-center;
+            justify-content: center;
+            text-decoration: none;
+            padding: 1rem 2rem;
+            border-radius: 2rem;
+            &:hover {
+                opacity: .6;
+            }
+        }
+    }
+}
