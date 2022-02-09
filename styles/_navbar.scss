@@ -11,12 +11,12 @@
     z-index: 5;
     display: flex;
     padding: 2.5rem calc((100vw - 1200px) / 2);
-    margin: 1.5rem 0;
+    margin: 0;
     position: relative;
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
-    @include mobile {
-        margin: 0;
+    @include desktop {
+        margin: 1.5rem 0;
     }
 
     &-logo {
@@ -24,22 +24,22 @@
         cursor: pointer;
         height: 2rem;
         position: absolute;
-        left: 10rem;
-        @include mobile {
-            left: 1.5rem;
+        left: 1.5rem;
+        @include desktop {
+            left: 10rem;
         }
 
     }
     &-bar {
-        opacity: 0;
+        color: $grayishViolet;
+        opacity: 1;
+        position: absolute;
+        top: 2.5rem;
+        right: 2rem;
+        font-size: 2rem;
 
-        @include mobile {
-            color: $grayishViolet;
-            opacity: 1;
-            position: absolute;
-            top: 2.5rem;
-            right: 2rem;
-            font-size: 2rem;
+        @include desktop {
+            opacity: 0;
         }
     }
     &-menu-a {
@@ -50,9 +50,10 @@
         position: absolute;
         top: 1.8rem;
         left: 20rem;
+        display: none;
 
-        @include mobile {
-            display: none;
+        @include desktop {
+            display: flex;
         }
 
         &-link {
@@ -73,9 +74,10 @@
         position: absolute;
         top: 1.8rem;
         right: 5rem;
+        display: none;
 
-        @include mobile {
-            display: none;
+        @include desktop {
+            display: flex;
         }
 
         &-link {

@@ -8,38 +8,38 @@
   z-index: 5;
   display: flex;
   padding: 2.5rem calc((100vw - 1200px) / 2);
-  margin: 1.5rem 0;
+  margin: 0;
   position: relative;
   font-family: "Poppins", sans-serif;
   font-weight: 700;
 }
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 1000px) {
   .navbar {
-    margin: 0;
+    margin: 1.5rem 0;
   }
 }
 .navbar-logo {
   cursor: pointer;
   height: 2rem;
   position: absolute;
-  left: 10rem;
+  left: 1.5rem;
 }
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 1000px) {
   .navbar-logo {
-    left: 1.5rem;
+    left: 10rem;
   }
 }
 .navbar-bar {
-  opacity: 0;
+  color: #9e9aa7;
+  opacity: 1;
+  position: absolute;
+  top: 2.5rem;
+  right: 2rem;
+  font-size: 2rem;
 }
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 1000px) {
   .navbar-bar {
-    color: #9e9aa7;
-    opacity: 1;
-    position: absolute;
-    top: 2.5rem;
-    right: 2rem;
-    font-size: 2rem;
+    opacity: 0;
   }
 }
 .navbar-menu-a {
@@ -49,10 +49,11 @@
   position: absolute;
   top: 1.8rem;
   left: 20rem;
+  display: none;
 }
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 1000px) {
   .navbar-menu-a {
-    display: none;
+    display: flex;
   }
 }
 .navbar-menu-a-link {
@@ -70,10 +71,11 @@
   position: absolute;
   top: 1.8rem;
   right: 5rem;
+  display: none;
 }
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 1000px) {
   .navbar-menu-b {
-    display: none;
+    display: flex;
   }
 }
 .navbar-menu-b-link {
