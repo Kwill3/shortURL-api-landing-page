@@ -100,6 +100,53 @@
   opacity: 0.6;
 }
 
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-gap: 2rem;
+  gap: 2rem;
+  grid-template-areas: "illustration" "intro" "input" "content" "subcontent1" "subcontent2" "subcontent3" "button";
+}
+@media screen and (min-width: 1000px) {
+  .grid-container {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "intro intro illustration" "input input input" "content content content" "subcontent1 subcontent2 subcontent3" "button button button";
+  }
+}
+
+.grid-item-1 {
+  grid-area: illustration;
+}
+
+.grid-item-2 {
+  grid-area: intro;
+}
+
+.grid-item-3 {
+  grid-area: input;
+}
+
+.grid-item-4 {
+  grid-area: content;
+}
+
+.grid-item-5 {
+  grid-area: subcontent1;
+}
+
+.grid-item-6 {
+  grid-area: subcontent2;
+}
+
+.grid-item-7 {
+  grid-area: subcontent3;
+}
+
+.grid-item-8 {
+  grid-area: button;
+}
+
 * {
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
