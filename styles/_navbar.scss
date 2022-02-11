@@ -13,7 +13,6 @@
     padding: 2.5rem calc((100vw - 1200px) / 2);
     margin: 0;
     position: relative;
-    font-family: 'Poppins', sans-serif;
     font-weight: 700;
     @include desktop {
         margin: 1.5rem 0;
@@ -100,7 +99,7 @@
             padding: 1rem 2rem;
             border-radius: 2rem;
             &:hover {
-                opacity: .6;
+                background-color: $cyanHover;
             }
         }
     }

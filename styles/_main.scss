@@ -8,11 +8,48 @@
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    padding: 1rem 2rem;
-    border-radius: 2rem;
+    padding: .8rem 2.8rem;
+    border-radius: 2.1rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
     &:hover {
-        opacity: .6;
+        background-color: $cyanHover;
     }
+}
+
+%content-styles {
+    width: 88%;
+    background-color: white;
+    text-align: center;
+    margin: 5rem auto 6rem auto;
+    & h3 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        padding: 2.5rem 2rem 1.5rem 2rem;
+        position: relative;
+        top: -3rem;
+    }
+    & p {
+        color: $grayishViolet;
+        line-height: 1.7;
+        font-size: .9rem;
+        padding: 0 2.5rem 0 2.5rem;
+        position: relative;
+        top: -3rem;
+    }
+}
+
+%image-styles {
+    margin: auto;
+    width: 90px;
+    height: 90px;
+    background-color: $darkViolet;
+    border-radius: 50%;
+    padding: 22px;
+    position: relative;
+    top: -3rem;
 }
 
 .grid-container {
@@ -29,7 +66,7 @@
         "subcontent1"
         "subcontent2"
         "subcontent3"
-        "button";
+        "boost";
 
     @include desktop {
         grid-template-columns: repeat(3, 1fr);
@@ -38,31 +75,151 @@
             "input input input"
             "content content content"
             "subcontent1 subcontent2 subcontent3"
-            "button button button";
+            "boost boost boost";
     }
 }
 
 .grid-item-1 {
     grid-area: illustration;
+    width: 100%;
+    overflow: hidden;
+    & img {
+        width: 140%;
+        padding-left: 5%;
+    }
 }
 .grid-item-2 {
     grid-area: intro;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    & h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        text-align: center;
+        line-height: 1.2;
+        padding: .8rem;
+    }
+    & p {
+        color: $grayishViolet;
+        text-align: center;
+        line-height: 1.7;
+        padding: 0 1rem 2rem 1rem;
+    }
+    & button {
+        @extend %button-styles;
+    }
 }
-.grid-item-3 {
-    grid-area: input;
+
+.content-container {
+    background-color: aliceblue;
+    margin-top: 8rem;
+    .grid-item-3 {
+        grid-area: input;
+        background-image: url('../images/bg-shorten-mobile.svg');
+        background-color: $darkViolet;
+        background-position: top right;
+        background-repeat: no-repeat;
+        background-size: 70%;
+        width: 88%;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1.5rem;
+        border-radius: .7rem;
+        position: relative;
+        top: -5rem;
+        & form {
+            width: 100%;
+            > * {
+                font-size: 1.1rem;
+                padding: .7rem;
+                border-radius: .3rem;
+                border: none;
+                width: 100%;
+            }
+            & input {
+                margin-bottom: 1rem;
+                padding-left: 1rem;
+            }
+            & button {
+                color: #fff;
+                background-color: $cyan;
+                font-weight: 700;
+                cursor: pointer;
+                &:hover {
+                    background-color: $cyanHover;
+                }
+            }
+        }
+    }
+    .grid-item-4 {
+        grid-area: content;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        & h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            text-align: center;
+            line-height: 1.2;
+            padding: 1rem;
+        }
+        & p {
+            color: $grayishViolet;
+            text-align: center;
+            line-height: 1.7;
+            font-size: 1rem;
+            padding: .5rem 1rem 2rem 1rem;
+        }
+    }
+    .grid-item-5 {
+        grid-area: subcontent1;
+        @extend %content-styles;
+        
+        &-image {
+            @extend %image-styles;
+        }
+    }
+    .grid-item-6 {
+        grid-area: subcontent2;
+        @extend %content-styles;
+        
+        &-image {
+            @extend %image-styles;
+        }
+    }
+    .grid-item-7 {
+        grid-area: subcontent3;
+        @extend %content-styles;
+        
+        &-image {
+            @extend %image-styles;
+        }
+    }
 }
-.grid-item-4 {
-    grid-area: content;
-}
-.grid-item-5 {
-    grid-area: subcontent1;
-}
-.grid-item-6 {
-    grid-area: subcontent2;
-}
-.grid-item-7 {
-    grid-area: subcontent3;
-}
+
 .grid-item-8 {
-    grid-area: button;
+    grid-area: boost;
+    background-image: url(../images/bg-boost-mobile.svg);
+    background-color: $darkViolet;
+    background-position: top right;
+    background-repeat: no-repeat;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 300px;
+    & h2 {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: white;
+        text-align: center;
+        line-height: 1.2;
+        padding: 1rem;
+    }
+    & button {
+        @extend %button-styles;
+    }
 }
