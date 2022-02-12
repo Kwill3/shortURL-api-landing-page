@@ -99,7 +99,7 @@
   background-color: #80e5e5;
 }
 
-.grid-item-8 button, .grid-item-2 button {
+.grid-item-8 button, .grid-container .grid-item-2 button {
   color: #fff;
   background-color: #2acfcf;
   display: flex;
@@ -113,24 +113,25 @@
   border: none;
   cursor: pointer;
 }
-.grid-item-8 button:hover, .grid-item-2 button:hover {
+.grid-item-8 button:hover, .grid-container .grid-item-2 button:hover {
   background-color: #80e5e5;
 }
 
-.content-container .grid-item-7, .content-container .grid-item-6, .content-container .grid-item-5 {
+.grid-content .grid-item-7, .grid-content .grid-item-6, .grid-content .grid-item-5 {
   width: 88%;
   background-color: white;
   text-align: center;
-  margin: 5rem auto 6rem auto;
+  margin: 1rem auto 5rem auto;
+  border-radius: 10px;
 }
-.content-container .grid-item-7 h3, .content-container .grid-item-6 h3, .content-container .grid-item-5 h3 {
+.grid-content .grid-item-7 h3, .grid-content .grid-item-6 h3, .grid-content .grid-item-5 h3 {
   font-size: 1.5rem;
   font-weight: 700;
   padding: 2.5rem 2rem 1.5rem 2rem;
   position: relative;
   top: -3rem;
 }
-.content-container .grid-item-7 p, .content-container .grid-item-6 p, .content-container .grid-item-5 p {
+.grid-content .grid-item-7 p, .grid-content .grid-item-6 p, .grid-content .grid-item-5 p {
   color: #9e9aa7;
   line-height: 1.7;
   font-size: 0.9rem;
@@ -139,7 +140,7 @@
   top: -3rem;
 }
 
-.content-container .grid-item-7-image, .content-container .grid-item-6-image, .content-container .grid-item-5-image {
+.grid-content .grid-item-7-image, .grid-content .grid-item-6-image, .grid-content .grid-item-5-image {
   margin: auto;
   width: 90px;
   height: 90px;
@@ -156,49 +157,61 @@
   grid-template-rows: auto;
   grid-gap: 2rem;
   gap: 2rem;
-  grid-template-areas: "illustration" "intro" "input" "content" "subcontent1" "subcontent2" "subcontent3" "boost";
+  grid-template-areas: "illustration" "intro";
+  margin-bottom: 11rem;
 }
 @media screen and (min-width: 1000px) {
   .grid-container {
     grid-template-columns: repeat(3, 1fr);
-    grid-template-areas: "intro intro illustration" "input input input" "content content content" "subcontent1 subcontent2 subcontent3" "boost boost boost";
+    grid-template-areas: "intro intro illustration" "input input input";
   }
 }
-
-.grid-item-1 {
+.grid-container .grid-item-1 {
   grid-area: illustration;
   width: 100%;
   overflow: hidden;
 }
-.grid-item-1 img {
+.grid-container .grid-item-1 img {
   width: 140%;
   padding-left: 5%;
 }
-
-.grid-item-2 {
+@media screen and (min-width: 1000px) {
+  .grid-container .grid-item-1 img {
+    width: 120%;
+  }
+}
+.grid-container .grid-item-2 {
   grid-area: intro;
   align-items: center;
   display: flex;
   flex-direction: column;
 }
-.grid-item-2 h1 {
+.grid-container .grid-item-2 h1 {
   font-size: 2.5rem;
   font-weight: 700;
   text-align: center;
   line-height: 1.2;
   padding: 0.8rem;
 }
-.grid-item-2 p {
+.grid-container .grid-item-2 p {
   color: #9e9aa7;
   text-align: center;
   line-height: 1.7;
   padding: 0 1rem 2rem 1rem;
 }
-.content-container {
+.grid-content {
   background-color: aliceblue;
-  margin-top: 8rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: "input" "content" "subcontent1" "subcontent2" "subcontent3" "boost";
 }
-.content-container .grid-item-3 {
+@media screen and (min-width: 1000px) {
+  .grid-content {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "input input input" "content content content" "subcontent1 subcontent2 subcontent3" "boost boost boost";
+  }
+}
+.grid-content .grid-item-3 {
   grid-area: input;
   background-image: url("../images/bg-shorten-mobile.svg");
   background-color: #3b3054;
@@ -215,78 +228,130 @@
   position: relative;
   top: -5rem;
 }
-.content-container .grid-item-3 form {
+.grid-content .grid-item-3 form {
   width: 100%;
 }
-.content-container .grid-item-3 form > * {
+.grid-content .grid-item-3 form > * {
   font-size: 1.1rem;
   padding: 0.7rem;
   border-radius: 0.3rem;
   border: none;
   width: 100%;
 }
-.content-container .grid-item-3 form input {
+.grid-content .grid-item-3 form input {
   margin-bottom: 1rem;
   padding-left: 1rem;
 }
-.content-container .grid-item-3 form button {
+.grid-content .grid-item-3 form button {
   color: #fff;
   background-color: #2acfcf;
   font-weight: 700;
   cursor: pointer;
 }
-.content-container .grid-item-3 form button:hover {
+.grid-content .grid-item-3 form button:hover {
   background-color: #80e5e5;
 }
-.content-container .grid-item-4 {
+.grid-content .grid-item-4 {
   grid-area: content;
   align-items: center;
   display: flex;
   flex-direction: column;
+  margin-bottom: 3rem;
 }
-.content-container .grid-item-4 h2 {
+.grid-content .grid-item-4 h2 {
   font-size: 1.8rem;
   font-weight: 700;
   text-align: center;
   line-height: 1.2;
   padding: 1rem;
 }
-.content-container .grid-item-4 p {
+.grid-content .grid-item-4 p {
   color: #9e9aa7;
   text-align: center;
   line-height: 1.7;
   font-size: 1rem;
   padding: 0.5rem 1rem 2rem 1rem;
 }
-.content-container .grid-item-5 {
+.grid-content .grid-item-5 {
   grid-area: subcontent1;
 }
-.content-container .grid-item-6 {
+.grid-content .grid-item-6 {
   grid-area: subcontent2;
 }
-.content-container .grid-item-7 {
+.grid-content .grid-item-7 {
   grid-area: subcontent3;
 }
 .grid-item-8 {
   grid-area: boost;
   background-image: url(../images/bg-boost-mobile.svg);
   background-color: #3b3054;
-  background-position: top right;
   background-repeat: no-repeat;
-  align-items: center;
+  background-size: 100%;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  padding: 22% 0;
   width: 100%;
   height: 300px;
 }
 .grid-item-8 h2 {
-  font-size: 1.8rem;
+  font-size: 1.7rem;
   font-weight: 700;
   color: white;
   text-align: center;
   line-height: 1.2;
   padding: 1rem;
+  justify-self: center;
 }
+.grid-footer-container .grid-ft-4, .grid-footer-container .grid-ft-3, .grid-footer-container .grid-ft-2 {
+  margin: 0 auto 2.5rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1rem;
+}
+.grid-footer-container .grid-ft-4 p, .grid-footer-container .grid-ft-3 p, .grid-footer-container .grid-ft-2 p {
+  color: #fff;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+.grid-footer-container .grid-ft-4 a, .grid-footer-container .grid-ft-3 a, .grid-footer-container .grid-ft-2 a {
+  text-decoration: none;
+  color: #9e9aa7;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.grid-footer-container {
+  background-color: #232127;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: "logo" "features" "resources" "company" "icons";
+}
+.grid-footer-container .grid-ft-1 {
+  grid-area: logo;
+  color: white;
+  margin: 3rem auto;
+}
+.grid-footer-container .grid-ft-2 {
+  grid-area: features;
+}
+.grid-footer-container .grid-ft-3 {
+  grid-area: resources;
+}
+.grid-footer-container .grid-ft-4 {
+  grid-area: company;
+}
+.grid-footer-container .grid-ft-5 {
+  grid-area: icons;
+  margin: 0 auto 4rem auto;
+  align-items: center;
+}
+.grid-footer-container .grid-ft-5 img {
+  padding: 0 0.5rem 0 0.5rem;
+}
+
 * {
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;

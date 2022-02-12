@@ -1,3 +1,61 @@
 @import 'colors';
 @import 'media-queries';
 
+%footer-styles {
+    margin: 0 auto 2.5rem auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1rem;
+
+    & p {
+        color: #fff;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+    }
+    & a {
+        text-decoration: none;
+        color: $grayishViolet;
+        font-weight: 500;
+        margin-bottom: 1rem;
+    }
+}
+
+.grid-footer-container {
+    background-color: $veryDarkViolet;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+        "logo"
+        "features"
+        "resources"
+        "company"
+        "icons";
+
+
+    .grid-ft-1 {
+        grid-area: logo;
+        color: white;
+        margin: 3rem auto;
+    }
+    .grid-ft-2 {
+        grid-area: features;
+        @extend %footer-styles;
+    }
+    .grid-ft-3 {
+        grid-area: resources;
+        @extend %footer-styles;
+    }
+    .grid-ft-4 {
+        grid-area: company;
+        @extend %footer-styles;
+    }
+    .grid-ft-5 {
+        grid-area: icons;
+        margin: 0 auto 4rem auto;
+        align-items: center;
+        & img {
+            padding: 0 .5rem 0 .5rem;
+        }
+    }
+}
