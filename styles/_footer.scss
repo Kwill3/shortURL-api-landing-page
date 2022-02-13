@@ -2,22 +2,30 @@
 @import 'media-queries';
 
 %footer-styles {
-    margin: 0 auto 2.5rem auto;
+    margin: .5rem 3rem 1.5rem 3rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     font-size: 1rem;
+    @include desktop {
+        align-items: baseline;
+        flex: none;
+    }
 
     & p {
         color: #fff;
         font-weight: 700;
-        margin-bottom: 1.5rem;
+        margin-bottom: 2rem;
     }
     & a {
         text-decoration: none;
         color: $grayishViolet;
         font-weight: 500;
         margin-bottom: 1rem;
+        &:hover {
+            cursor: pointer;
+            color: $cyan;
+        }
     }
 }
 
@@ -31,12 +39,20 @@
         "resources"
         "company"
         "icons";
-
+    @include desktop {
+        display: flex;
+        flex-direction: row;
+        padding: 5rem 10rem 2rem 10rem;
+    }
 
     .grid-ft-1 {
         grid-area: logo;
         color: white;
         margin: 3rem auto;
+        @include desktop {
+            margin: 0;
+            flex: auto;
+        }
     }
     .grid-ft-2 {
         grid-area: features;
@@ -54,8 +70,19 @@
         grid-area: icons;
         margin: 0 auto 4rem auto;
         align-items: center;
+        @include desktop {
+            margin: 0 0 4rem 3rem;
+            align-items: baseline;
+        }
         & img {
             padding: 0 .5rem 0 .5rem;
+            &:hover {
+                cursor: pointer;
+                filter: brightness(0) saturate(100%) invert(73%) sepia(100%) saturate(339%) hue-rotate(120deg) brightness(81%) contrast(101%);
+            }
+            @include desktop {
+                padding: .5rem;
+            }
         }
     }
 }

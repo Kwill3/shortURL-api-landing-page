@@ -20,11 +20,15 @@
 }
 
 %content-styles {
-    width: 88%;
+    width: 92%;
     background-color: white;
     text-align: center;
     margin: 1rem auto 5rem auto;
     border-radius: 10px;
+    
+    @include desktop {
+        text-align: left;
+    }
     & h3 {
         font-size: 1.5rem;
         font-weight: 700;
@@ -36,9 +40,12 @@
         color: $grayishViolet;
         line-height: 1.7;
         font-size: .9rem;
-        padding: 0 2.5rem 0 2.5rem;
+        padding: 0 2.5rem;
         position: relative;
         top: -3rem;
+        @include desktop {
+            padding: 0 2rem;
+        }
     }
 }
 
@@ -51,6 +58,9 @@
     padding: 22px;
     position: relative;
     top: -3rem;
+    @include desktop {
+        left: -5.5rem;
+    }
 }
 
 .grid-container {
@@ -65,10 +75,10 @@
     margin-bottom: 11rem;
 
     @include desktop {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: 1.1fr .9fr;
         grid-template-areas: 
-            "intro intro illustration"
-            "input input input";
+            "intro illustration";
+        margin: 4rem 0 10rem 0;
     }
 
     .grid-item-1 {
@@ -79,7 +89,7 @@
             width: 140%;
             padding-left: 5%;
             @include desktop {
-                width: 120%;
+                width: auto;
             }
         }
     }
@@ -88,18 +98,34 @@
         align-items: center;
         display: flex;
         flex-direction: column;
+        @include desktop {
+            align-items: baseline;
+            margin: 3.5rem 0 0 10rem;
+        }
         & h1 {
             font-size: 2.5rem;
             font-weight: 700;
             text-align: center;
             line-height: 1.2;
             padding: .8rem;
+            @include desktop {
+                font-size: 5rem;
+                text-align: left;
+                line-height: 1.1;
+                padding: 0;
+            }
         }
         & p {
             color: $grayishViolet;
             text-align: center;
             line-height: 1.7;
             padding: 0 1rem 2rem 1rem;
+            @include desktop {
+                text-align: left;
+                padding: 0 0 2.5rem 0;
+                font-size: 1.5rem;
+                line-height: 1.6;
+            }
         }
         & button {
             @extend %button-styles;
@@ -108,7 +134,7 @@
 }
 
 .grid-content {
-    background-color: aliceblue;
+    background-color: $contentBG;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-areas: 
@@ -126,6 +152,7 @@
             "content content content"
             "subcontent1 subcontent2 subcontent3"
             "boost boost boost";
+        padding: 0 10rem 8rem 10rem;
     }
     .grid-item-3 {
         grid-area: input;
@@ -143,18 +170,40 @@
         border-radius: .7rem;
         position: relative;
         top: -5rem;
+
+        @include desktop {
+            background-image: url('../images/bg-shorten-desktop.svg');
+            background-position: center;
+            background-size: cover;
+            padding: 3.5rem;
+            width: 100%;
+        }
         & form {
             width: 100%;
+            @include desktop {
+                display: flex;
+                flex-direction: row;
+            }
+            
             > * {
                 font-size: 1.1rem;
                 padding: .7rem;
                 border-radius: .3rem;
                 border: none;
                 width: 100%;
+                @include desktop {
+                    font-size: 1.3rem;
+                    border-radius: .5rem;
+                }
             }
             & input {
                 margin-bottom: 1rem;
                 padding-left: 1rem;
+                @include desktop {
+                    margin-bottom: 0;
+                    padding: 1rem 2rem;
+                    flex: auto;
+                }
             }
             & button {
                 color: #fff;
@@ -163,6 +212,12 @@
                 cursor: pointer;
                 &:hover {
                     background-color: $cyanHover;
+                }
+                @include desktop {
+                    flex: none;
+                    width: auto;
+                    margin-left: 1.5rem;
+                    padding: 1rem 2.5rem;
                 }
             }
         }
@@ -179,6 +234,9 @@
             text-align: center;
             line-height: 1.2;
             padding: 1rem;
+            @include desktop {
+                font-size: 2.5rem;
+            }
         }
         & p {
             color: $grayishViolet;
@@ -186,12 +244,15 @@
             line-height: 1.7;
             font-size: 1rem;
             padding: .5rem 1rem 2rem 1rem;
+            @include desktop {
+                font-size: 1.3rem;
+                width: 58%;
+            }
         }
     }
     .grid-item-5 {
         grid-area: subcontent1;
         @extend %content-styles;
-        
         &-image {
             @extend %image-styles;
         }
@@ -199,7 +260,10 @@
     .grid-item-6 {
         grid-area: subcontent2;
         @extend %content-styles;
-        
+        @include desktop {
+            position: relative;
+            top: 3rem;
+        }
         &-image {
             @extend %image-styles;
         }
@@ -207,7 +271,10 @@
     .grid-item-7 {
         grid-area: subcontent3;
         @extend %content-styles;
-        
+        @include desktop {
+            position: relative;
+            top: 6rem;
+        }
         &-image {
             @extend %image-styles;
         }
@@ -220,23 +287,34 @@
     background-color: $darkViolet;
     background-repeat: no-repeat;
     background-size: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-items: center;
-    padding: 22% 0;
     width: 100%;
     height: 300px;
-    & h2 {
-        font-size: 1.7rem;
-        font-weight: 700;
-        color: white;
-        text-align: center;
-        line-height: 1.2;
-        padding: 1rem;
-        justify-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include desktop {
+        background-image: url(../images/bg-boost-desktop.svg);
+        height: 250px;
     }
-    & button {
-        @extend %button-styles;
+
+    &-boost {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        & h2 {
+            font-size: 1.7rem;
+            font-weight: 700;
+            color: white;
+            text-align: center;
+            line-height: 1.2;
+            padding-bottom: 1.5rem;
+            @include desktop {
+                font-size: 2.5rem;
+                padding-bottom: 2rem;
+            }
+        }
+        & button {
+            @extend %button-styles;
+        }
     }
 }
