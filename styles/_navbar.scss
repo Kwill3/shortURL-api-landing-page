@@ -2,15 +2,16 @@
 @import 'media-queries';
 
 .navbar {
-    height: 6rem;
+    height: 3rem;
     z-index: 1;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     margin-top: 2.5rem;
     font-weight: 700;
     width: 100%;
     @include desktop {
-        margin-top: 4rem;
+        margin: 4rem 0;
+        flex-direction: row;
     }
 
     &-logo {
@@ -27,85 +28,127 @@
     }
     &-bar {
         color: $grayishViolet;
+        position: absolute;
+        right: 1.5rem;
         opacity: 1;
         font-size: 2rem;
         flex: none;
-        margin: 0 1.5rem;
         @include desktop {
             opacity: 0;
         }
     }
-    &-menu-a {
-        // list-style: none;
+    &-menu {
         display: none;
-
+        flex-direction: column;
+        width: 88%;
+        margin: .9rem auto;
+        z-index: 1;
+        background-color: $darkViolet;
+        border-radius: .5rem;
+        &.active {
+            display: flex;
+        }
         @include desktop {
             display: flex;
-            align-items: flex-start;
-            justify-content: left;
-            text-align: left;
-            flex: auto;
-            margin-top: .2rem;
-            margin-left: -1.5rem;
+            flex-direction: row;
+            margin: 0 0 0 3rem;
+            background-color: transparent;
         }
-
-        &-link {
-            color: $gray;
-            @include desktop {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                text-decoration: none;
-                font-size: 1rem;
-                padding-right: 2rem;
-            }
-            &:hover {
-                color: $veryDarkViolet;
-            }
-        }
-    }
-    &-menu-b {
-        // list-style: none;
-        display: none;
-
-        @include desktop {
+        &-a {
+            // list-style: none;
             display: flex;
-            align-items: flex-start;
-            justify-content: left;
-            flex: none;
-            margin: .2rem 10rem 0 0;
-        }
-
-        &-link {
-            color: $gray;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 2.5rem;
+    
             @include desktop {
                 display: flex;
+                flex-direction: row;
                 align-items: flex-start;
-                justify-content: right;
-                text-decoration: none;
-                margin-right: 2rem;
-                font-size: 1rem;
-                padding: 0 .5rem;
+                justify-content: left;
+                text-align: left;
+                flex: auto;
+                margin-top: .2rem;
+                padding: 0;
             }
-            &:hover {
-                color: $veryDarkViolet;
+    
+            &-link {
+                color: white;
+                text-decoration: none;
+                padding-bottom: 2.5rem;
+                @include desktop {
+                    color: $gray;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 1rem;
+                    padding: 0 2rem 0 0;
+                }
+                &:hover {
+                    color: $veryDarkViolet;
+                }
             }
         }
-        &-button {
-            color: #fff;
-            background-color: $cyan;
+        & hr {
+            border: 0;
+            border-top: 1px solid $grayishViolet;
+            width: 85%;
+            margin: 0 auto;
             @include desktop {
+                display: none;
+            }
+        }
+        &-b {
+            // list-style: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2.5rem 0 2rem 0;
+    
+            @include desktop {
+                display: flex;
+                flex-direction: row;
+                align-items: flex-start;
+                justify-content: left;
+                flex: none;
+                margin: .2rem 10rem 0 0;
+                padding: 0;
+            }
+    
+            &-link {
+                color: white;
+                text-decoration: none;
+                padding-bottom: 2rem;
+                @include desktop {
+                    color: $gray;
+                    display: flex;
+                    align-items: flex-start;
+                    justify-content: right;
+                    margin-right: 2rem;
+                    font-size: 1rem;
+                    padding: 0 .5rem;
+                }
+                &:hover {
+                    color: $veryDarkViolet;
+                }
+            }
+            &-button {
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                text-decoration: none;
                 border-radius: 2rem;
-                margin-top: -.8rem;
-                font-size: 1rem;
-                padding: .8rem 1.5rem;
-            }
-            &:hover {
-                background-color: $cyanHover;
+                padding: 1rem 6.5rem;
+                color: #fff;
+                background-color: $cyan;
+                text-decoration: none;
+                @include desktop {
+                    margin-top: -.8rem;
+                    font-size: 1rem;
+                    padding: .8rem 1.5rem;
+                }
+                &:hover {
+                    background-color: $cyanHover;
+                }
             }
         }
     }

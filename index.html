@@ -9,11 +9,11 @@
   <link rel="stylesheet" href="./styles/styles.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:500,700">
   <title>Frontend Mentor | Shortly URL shortening API Challenge</title>
-
   <style>
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
   </style>
+  <script src="./script.js" defer></script>
 </head>
 <body>
   <!-- Navbar Section -->
@@ -21,17 +21,20 @@
     <div class="navbar-logo">
       <img src="./images/logo.svg" alt="logo">
     </div>
-    <div class="navbar-bar">
+    <a href="#" class="navbar-bar">
       <i class="fas fa-bars"></i>
-    </div>
-    <div class="navbar-menu-a">
-      <a href="/" class="navbar-menu-a-link">Features</a>
-      <a href="/" class="navbar-menu-a-link">Pricing</a>
-      <a href="/" class="navbar-menu-a-link">Resources</a>
-    </div>
-    <div class="navbar-menu-b">
-      <a href="/" class="navbar-menu-b-link">Login</a>
-      <a href="/" class="navbar-menu-b-button">Sign Up</a>
+    </a>
+    <div class="navbar-menu">
+      <div class="navbar-menu-a">
+        <a href="/" class="navbar-menu-a-link">Features</a>
+        <a href="/" class="navbar-menu-a-link">Pricing</a>
+        <a href="/" class="navbar-menu-a-link">Resources</a>
+      </div>
+      <hr />
+      <div class="navbar-menu-b">
+        <a href="/" class="navbar-menu-b-link">Login</a>
+        <a href="/" class="navbar-menu-b-button">Sign Up</a>
+      </div>
     </div>
   </nav>
   <!-- Main Section -->
@@ -112,7 +115,7 @@
       </div>
       <div class="grid-footer-item grid-ft-5">
         <img src="./images/icon-facebook.svg" alt="facebook icon">
-        <img src="./images/icon-twitter.svg" alt="twiiter icon">
+        <img src="./images/icon-twitter.svg" alt="twitter icon">
         <img src="./images/icon-pinterest.svg" alt="pinterest icon">
         <img src="./images/icon-instagram.svg" alt="instagram icon">
       </div>
