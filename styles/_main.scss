@@ -20,13 +20,14 @@
 }
 
 %content-styles {
-    width: 92%;
+    width: 88%;
     background-color: white;
     text-align: center;
     margin: 1rem auto 5rem auto;
     border-radius: 10px;
     
     @include desktop {
+        width: 92%;
         text-align: left;
     }
     & h3 {
@@ -78,7 +79,7 @@
         grid-template-columns: 1.1fr .9fr;
         grid-template-areas: 
             "intro illustration";
-        margin: 4rem 0 10rem 0;
+        margin: 1rem 0 10rem 0;
     }
 
     .grid-item-1 {
@@ -162,7 +163,7 @@
         background-repeat: no-repeat;
         background-size: 70%;
         width: 88%;
-        margin: auto;
+        margin: 0 auto 1rem auto;
         display: flex;
         flex-direction: column;
         align-items: center;

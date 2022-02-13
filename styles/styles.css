@@ -2,35 +2,35 @@
   height: 6rem;
   z-index: 1;
   display: flex;
-  align-items: flex-start;
+  flex-direction: row;
   margin-top: 2.5rem;
   font-weight: 700;
   width: 100%;
 }
 @media screen and (min-width: 1000px) {
   .navbar {
-    margin: 4rem 0;
+    margin-top: 4rem;
   }
 }
 .navbar-logo {
-  display: flex;
-  cursor: pointer;
-  height: 2rem;
+  flex: auto;
   margin-left: 1.5rem;
-  align-items: flex-start;
 }
 @media screen and (min-width: 1000px) {
   .navbar-logo {
     margin-left: 10rem;
+    flex: none;
   }
+}
+.navbar-logo img {
+  cursor: pointer;
 }
 .navbar-bar {
   color: #9e9aa7;
   opacity: 1;
   font-size: 2rem;
   flex: none;
-  align-items: flex-end;
-  margin: 0 2rem;
+  margin: 0 1.5rem;
 }
 @media screen and (min-width: 1000px) {
   .navbar-bar {
@@ -38,53 +38,60 @@
   }
 }
 .navbar-menu-a {
-  display: flex;
-  align-items: center;
-  list-style: none;
-  text-align: center;
-  margin: 0 10rem 0 0;
-  position: absolute;
-  left: 20rem;
   display: none;
 }
 @media screen and (min-width: 1000px) {
   .navbar-menu-a {
     display: flex;
+    align-items: flex-start;
+    justify-content: left;
+    text-align: left;
+    flex: auto;
+    margin-top: 0.2rem;
+    margin-left: -1.5rem;
   }
 }
 .navbar-menu-a-link {
   color: #bfbfbf;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  padding: 0 1rem;
+}
+@media screen and (min-width: 1000px) {
+  .navbar-menu-a-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 1rem;
+    padding-right: 2rem;
+  }
 }
 .navbar-menu-a-link:hover {
   color: #232127;
 }
 .navbar-menu-b {
-  display: flex;
-  align-items: center;
-  list-style: none;
-  text-align: center;
-  position: absolute;
-  right: 5rem;
   display: none;
 }
 @media screen and (min-width: 1000px) {
   .navbar-menu-b {
     display: flex;
+    align-items: flex-start;
+    justify-content: left;
+    flex: none;
+    margin: 0.2rem 10rem 0 0;
   }
 }
 .navbar-menu-b-link {
   color: #bfbfbf;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  padding: 0 1rem;
-  margin-right: 2rem;
+}
+@media screen and (min-width: 1000px) {
+  .navbar-menu-b-link {
+    display: flex;
+    align-items: flex-start;
+    justify-content: right;
+    text-decoration: none;
+    margin-right: 2rem;
+    font-size: 1rem;
+    padding: 0 0.5rem;
+  }
 }
 .navbar-menu-b-link:hover {
   color: #232127;
@@ -92,12 +99,18 @@
 .navbar-menu-b-button {
   color: #fff;
   background-color: #2acfcf;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  padding: 1rem 2rem;
-  border-radius: 2rem;
+}
+@media screen and (min-width: 1000px) {
+  .navbar-menu-b-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    border-radius: 2rem;
+    margin-top: -0.8rem;
+    font-size: 1rem;
+    padding: 0.8rem 1.5rem;
+  }
 }
 .navbar-menu-b-button:hover {
   background-color: #80e5e5;
@@ -122,7 +135,7 @@
 }
 
 .grid-content .grid-item-7, .grid-content .grid-item-6, .grid-content .grid-item-5 {
-  width: 92%;
+  width: 88%;
   background-color: white;
   text-align: center;
   margin: 1rem auto 5rem auto;
@@ -130,6 +143,7 @@
 }
 @media screen and (min-width: 1000px) {
   .grid-content .grid-item-7, .grid-content .grid-item-6, .grid-content .grid-item-5 {
+    width: 92%;
     text-align: left;
   }
 }
@@ -183,7 +197,7 @@
   .grid-container {
     grid-template-columns: 1.1fr 0.9fr;
     grid-template-areas: "intro illustration";
-    margin: 4rem 0 10rem 0;
+    margin: 1rem 0 10rem 0;
   }
 }
 .grid-container .grid-item-1 {
@@ -262,7 +276,7 @@
   background-repeat: no-repeat;
   background-size: 70%;
   width: 88%;
-  margin: auto;
+  margin: 0 auto 1rem auto;
   display: flex;
   flex-direction: column;
   align-items: center;

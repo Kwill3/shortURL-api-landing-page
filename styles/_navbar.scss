@@ -1,91 +1,92 @@
 @import 'colors';
 @import 'media-queries';
 
-%align-center {
-    display: flex;
-    align-items: center;
-}
-
 .navbar {
     height: 6rem;
-    z-index: 5;
+    z-index: 1;
     display: flex;
-    padding: 2.5rem calc((100vw - 1200px) / 2);
-    margin: 0;
-    position: relative;
+    flex-direction: row;
+    margin-top: 2.5rem;
     font-weight: 700;
+    width: 100%;
     @include desktop {
-        margin: 1.5rem 0;
+        margin-top: 4rem;
     }
 
     &-logo {
-        @extend %align-center;
-        cursor: pointer;
-        height: 2rem;
-        position: absolute;
-        left: 1.5rem;
+        flex: auto;
+        margin-left: 1.5rem;
         @include desktop {
-            left: 10rem;
+            margin-left: 10rem;
+            flex: none;
+        }
+        & img {
+            cursor: pointer;
         }
 
     }
     &-bar {
         color: $grayishViolet;
         opacity: 1;
-        position: absolute;
-        top: 2.5rem;
-        right: 2rem;
         font-size: 2rem;
-
+        flex: none;
+        margin: 0 1.5rem;
         @include desktop {
             opacity: 0;
         }
     }
     &-menu-a {
-        @extend %align-center;
-        list-style: none;
-        text-align: center;
-        margin: 1rem 10rem 0 0;
-        position: absolute;
-        top: 1.8rem;
-        left: 20rem;
+        // list-style: none;
         display: none;
 
         @include desktop {
             display: flex;
+            align-items: flex-start;
+            justify-content: left;
+            text-align: left;
+            flex: auto;
+            margin-top: .2rem;
+            margin-left: -1.5rem;
         }
 
         &-link {
             color: $gray;
-            @extend %align-center;
-            justify-content: center;
-            text-decoration: none;
-            padding: 0 1rem;
+            @include desktop {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-decoration: none;
+                font-size: 1rem;
+                padding-right: 2rem;
+            }
             &:hover {
                 color: $veryDarkViolet;
             }
         }
     }
     &-menu-b {
-        @extend %align-center;
-        list-style: none;
-        text-align: center;
-        position: absolute;
-        top: 1.8rem;
-        right: 5rem;
+        // list-style: none;
         display: none;
 
         @include desktop {
             display: flex;
+            align-items: flex-start;
+            justify-content: left;
+            flex: none;
+            margin: .2rem 10rem 0 0;
         }
 
         &-link {
             color: $gray;
-            @extend %align-center;
-            justify-content: center;
-            text-decoration: none;
-            padding: 0 1rem;
-            margin-right: 2rem;
+            @include desktop {
+                display: flex;
+                align-items: flex-start;
+                justify-content: right;
+                text-decoration: none;
+                margin-right: 2rem;
+                font-size: 1rem;
+                padding: 0 .5rem;
+            }
             &:hover {
                 color: $veryDarkViolet;
             }
@@ -93,11 +94,16 @@
         &-button {
             color: #fff;
             background-color: $cyan;
-            @extend %align-center;
-            justify-content: center;
-            text-decoration: none;
-            padding: 1rem 2rem;
-            border-radius: 2rem;
+            @include desktop {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-decoration: none;
+                border-radius: 2rem;
+                margin-top: -.8rem;
+                font-size: 1rem;
+                padding: .8rem 1.5rem;
+            }
             &:hover {
                 background-color: $cyanHover;
             }
