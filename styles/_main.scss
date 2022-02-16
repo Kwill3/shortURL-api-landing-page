@@ -140,6 +140,7 @@
     grid-template-columns: 1fr;
     grid-template-areas: 
         "form"
+        "generated"
         "content"
         "subcontent1"
         "subcontent2"
@@ -150,6 +151,7 @@
         grid-template-columns: repeat(3, 1fr);
         grid-template-areas: 
             "form form form"
+            "generated generated generated"
             "content content content"
             "subcontent1 subcontent2 subcontent3"
             "boost boost boost";
@@ -163,7 +165,7 @@
         background-repeat: no-repeat;
         background-size: 70%;
         width: 88%;
-        margin: 0 auto 1rem auto;
+        margin: 0 auto;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -178,6 +180,7 @@
             background-size: cover;
             padding: 3.5rem;
             width: 100%;
+            margin: 0 auto 1rem auto;
         }
         & form {
             width: 100%;
@@ -239,6 +242,98 @@
                     width: auto;
                     margin: 0 0 0 1.5rem;
                     padding: 1rem 2.5rem;
+                }
+            }
+        }
+    }
+    .grid-item-generated {
+        grid-area: generated;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 88%;
+        margin: 0 auto;
+        position: relative;
+        top: -5rem;
+        overflow: hidden;
+        @include desktop {
+            top: -5.5rem;
+            width: 100%;
+        }
+        &-link {
+            background-color: white;
+            border-radius: .5rem;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            margin-top: 1.5rem;
+            @include desktop {
+                flex-direction: row;
+                align-items: center;
+                margin-top: 1rem;
+            }
+            &-original {
+                padding: 1rem 0 .5rem 1rem;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                max-width: 95%; 
+                font-size: 1rem;
+                @include desktop {
+                    flex: auto;
+                    padding: 1.5rem 2rem;
+                    font-size: 1.3rem;
+                }
+            }
+            & hr {
+                border: 0;
+                border-top: 1px solid $gray;
+                width: 100%;
+                @include desktop {
+                    display: none;
+                }
+            }
+            &-short {
+                padding: .5rem 0 1rem 1rem;
+                color: $cyan;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                max-width: 95%;
+                font-size: 1rem;
+                @include desktop {
+                    padding: 1rem 2rem;
+                    font-size: 1.3rem;
+                    text-align: right;
+                    overflow: visible;
+                    text-overflow: initial;
+                    white-space: nowrap;
+                }
+            }
+            &-copy {
+                width: 90%;
+                color: #fff;
+                background-color: $cyan;
+                font-size: 1rem;
+                font-weight: 700;
+                border: none;
+                border-radius: .3rem;
+                margin: 0 auto 1rem auto;
+                padding: .5rem 0;
+                cursor: pointer;
+                &.active {
+                    background-color: $darkViolet;
+                    pointer-events: none;
+                }
+                @include desktop {
+                    flex: none;
+                    width: auto;
+                    margin: 0 1.5rem 0 0;
+                    padding: .7rem 2rem;
+                    font-size: 1rem;
+                }
+                &:hover {
+                    background-color: $cyanHover;
                 }
             }
         }
