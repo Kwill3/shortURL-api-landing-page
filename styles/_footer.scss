@@ -45,7 +45,7 @@
         padding: 5rem 10rem 2rem 10rem;
     }
 
-    .grid-ft-1 {
+    .grid-ft-logo {
         grid-area: logo;
         color: white;
         margin: 3rem auto;
@@ -54,19 +54,19 @@
             flex: auto;
         }
     }
-    .grid-ft-2 {
+    .grid-ft-features {
         grid-area: features;
         @extend %footer-styles;
     }
-    .grid-ft-3 {
+    .grid-ft-resources {
         grid-area: resources;
         @extend %footer-styles;
     }
-    .grid-ft-4 {
+    .grid-ft-company {
         grid-area: company;
         @extend %footer-styles;
     }
-    .grid-ft-5 {
+    .grid-ft-icons {
         grid-area: icons;
         margin: 0 auto 4rem auto;
         align-items: center;

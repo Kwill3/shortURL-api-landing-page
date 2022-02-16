@@ -15,6 +15,18 @@ form.addEventListener('submit', (e) => {
             link.classList.toggle('active');
         }
         e.preventDefault();
+    } else {
+        e.preventDefault();
+        fetch(`https://api.shrtco.de/v2/shorten?url=${link.value}`)
+        .then(res => res.json())
+        .then(json => {
+            if (json.ok) {
+                console.log('Success!')
+                console.log(json);
+            } else {
+                console.log(json);
+            }
+        })
     }
 })
 

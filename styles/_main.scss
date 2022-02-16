@@ -72,17 +72,17 @@
     gap: 2rem;
     grid-template-areas: 
         "illustration"
-        "intro";
+        "header";
     margin-bottom: 11rem;
 
     @include desktop {
         grid-template-columns: 1.1fr .9fr;
         grid-template-areas: 
-            "intro illustration";
+            "header illustration";
         margin: 1rem 0 10rem 0;
     }
 
-    .grid-item-1 {
+    .grid-item-illustration {
         grid-area: illustration;
         width: 100%;
         overflow: hidden;
@@ -94,8 +94,8 @@
             }
         }
     }
-    .grid-item-2 {
-        grid-area: intro;
+    .grid-item-header {
+        grid-area: header;
         align-items: center;
         display: flex;
         flex-direction: column;
@@ -139,7 +139,7 @@
     display: grid;
     grid-template-columns: 1fr;
     grid-template-areas: 
-        "input"
+        "form"
         "content"
         "subcontent1"
         "subcontent2"
@@ -149,14 +149,14 @@
     @include desktop {
         grid-template-columns: repeat(3, 1fr);
         grid-template-areas: 
-            "input input input"
+            "form form form"
             "content content content"
             "subcontent1 subcontent2 subcontent3"
             "boost boost boost";
         padding: 0 10rem 8rem 10rem;
     }
-    .grid-item-3 {
-        grid-area: input;
+    .grid-item-form {
+        grid-area: form;
         background-image: url('../images/bg-shorten-mobile.svg');
         background-color: $darkViolet;
         background-position: top right;
@@ -243,7 +243,7 @@
             }
         }
     }
-    .grid-item-4 {
+    .grid-item-content {
         grid-area: content;
         align-items: center;
         display: flex;
@@ -271,14 +271,14 @@
             }
         }
     }
-    .grid-item-5 {
+    .grid-item-subcontent1 {
         grid-area: subcontent1;
         @extend %content-styles;
         &-image {
             @extend %image-styles;
         }
     }
-    .grid-item-6 {
+    .grid-item-subcontent2 {
         grid-area: subcontent2;
         @extend %content-styles;
         @include desktop {
@@ -289,7 +289,7 @@
             @extend %image-styles;
         }
     }
-    .grid-item-7 {
+    .grid-item-subcontent3 {
         grid-area: subcontent3;
         @extend %content-styles;
         @include desktop {
@@ -302,7 +302,7 @@
     }
 }
 
-.grid-item-8 {
+.grid-item-boost {
     grid-area: boost;
     background-image: url(../images/bg-boost-mobile.svg);
     background-color: $darkViolet;
@@ -318,7 +318,7 @@
         height: 250px;
     }
 
-    &-boost {
+    &-container {
         display: flex;
         flex-direction: column;
         align-items: center;
