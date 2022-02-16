@@ -16,8 +16,6 @@ This is a solution to the [Shortly URL shortening API Challenge challenge on Fro
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
-
 ## Overview
 
 ### The challenge
@@ -35,81 +33,49 @@ Users should be able to:
 
 ![](./screenshot.jpg)
 
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
-
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [GitHub](https://github.com/Kwill3/shortURL-api-landing-page)
+- Live Site URL: [GitHub Pages](https://kwill3.github.io/shortURL-api-landing-page/)
 
 ## My process
 
 ### Built with
 
 - Semantic HTML5 markup
-- CSS custom properties
+- SASS
 - Flexbox
 - CSS Grid
+- Javascript
+- [shrtcode API](https://shrtco.de/docs/)
 - Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+I learnt how to use Javascript:
+- to style input elements in forms. This can help the user put in the correct inputs.
+- to clear input after submit button is clicked
+- to change and toggle element classes
 
-To see how you can add code snippets, see below:
+- I have already been introduced to CSS Grid but this was the first time I am actually using it in a project and I have to say that CSS Grid really makes positioning of elements so much easier and intuitive. Using it to create a project that incorporates Responsive Web Design is the way to go.
 
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
-```
-
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+- When overflowing an element with ellipsis, the root container also needs overflow to be set to hidden otherwise the element will overflow and stretch the page width.
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+- Halfway into this project I just learned that use of `@import` in SASS has been deprecated and I should have been using `@use` or `@forward` instead. I will probably familiarise myself with them in the next project.
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+- [Build a Responsive Website Using HTML & SASS/SCSS Tutorial](https://www.youtube.com/watch?v=pk-MEjUINjI) - This video taught me to use SASS modularly.
+- [Learn CSS Grid in 20 Minutes](https://www.youtube.com/watch?v=9zBsdzdE4sM) - This is an amazing video that goes through in-depth explanation on how to use CSS Grid.
+- [How To Write Mobile-first CSS](https://zellwk.com/blog/how-to-write-mobile-first-css/) - A brief article on designing mobile first applications.
+- [Basic concepts of flexbox](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox) - This article by Mozilla really helped me put into practise the flex grow and shrink properties when I am trying to flex my input responsively without changing my button size.
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
+- GitHub - [William Lee](https://github.com/Kwill3/)
 
 ## Acknowledgments
 
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+- [Web Dev Simplified Youtube Channel](https://www.youtube.com/c/WebDevSimplified) - This channel helped me immensely while I was working on this project, a lot of the videos helped me when I got stuck with a particular function that I was trying to implement.
