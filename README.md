@@ -31,7 +31,9 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+<img src="./Solution-Desktop.png" width="600">
+
+<img src="./Solution-Mobile.png" width="200">
 
 ### Links
 
